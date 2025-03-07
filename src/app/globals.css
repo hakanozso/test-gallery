@@ -1,0 +1,322 @@
+.openable-modal {
+  /* animation: 3s infinite alternate slide-in;
+  transition: all 0.2s ease-in-out; */
+}
+
+.gallery-outer {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+
+.gallery-content {
+
+  height: 77%;
+  margin-bottom: 2%;
+
+  /* position: absolute;
+  width: 100%;
+  height: 80%; */
+
+
+
+  /* overflow-y: hidden;
+  overflow-x: hidden; */
+
+
+  /* display: flex;
+  justify-self: center;
+  justify-content: center;
+  justify-items: center; */
+
+
+  /* width: 100%; */
+
+  /* margin: auto; */
+  /* margin-top: 20%; */
+
+  /* display: flex; */
+
+
+}
+
+.gallery-content .selectedImg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* width: 100%; */
+  height: 100%;
+  overflow: hidden;
+
+  margin: auto;
+
+  max-width: 80%;
+
+}
+
+.gallery-content .selectedImg img {
+
+  align-self: center;
+  max-width: 500px;
+
+  /* max-width: 100%; */
+
+  max-height: 100%;
+  object-fit: contain;
+  /* transition: transform 800ms; */
+  user-select: none;
+  border-radius: 0.5rem;
+  box-shadow: 0px 0px 7px #666;
+
+}
+
+.gallery-content .selectedImg img:hover {
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+
+.gallery-content .selectedImg img:-moz-drag-over {
+  cursor: -webkit-grabbing;
+  cursor: grabbing;
+}
+
+
+
+.gallery-prev {
+  background-color: black;
+  position: absolute;
+  top: 60px;
+  /* top: 350px; */
+  left: 0px;
+  /* width: 100px; */
+  width: 8%;
+  height: 75%;
+  border: none;
+  outline: none;
+
+  border: 1px solid black;
+  border-radius: 0.5rem;
+}
+
+.gallery-prev:hover {
+  background-color: whitesmoke;
+  cursor: pointer;
+  /* opacity: 0.2V  ; */
+}
+
+.gallery-prev:hover svg {
+  fill: currentColor;
+}
+
+.gallery-next {
+  background-color: black;
+  position: absolute;
+  top: 60px;
+  /* top: 350px; */
+  right: 00px;
+  /* width: 100px; */
+  width: 8%;
+  height: 75%;
+  border: none;
+  outline: none;
+
+  border: 1px solid black;
+  border-radius: 0.5rem;
+
+}
+
+.gallery-next:hover {
+  background-color: whitesmoke;
+  cursor: pointer;
+  /* opacity: 0.2; */
+}
+
+.gallery-next:hover svg {
+  fill: currentColor;
+}
+
+.gallery-slider {
+  display: block;
+  /* width: 100%; */
+  position: relative;
+  /* bottom: 1%; */
+  left: 0%;
+  right: 0%;
+  border: 1px solid whitesmoke;
+  border-radius: 0.5rem;
+  padding-top: 6px;
+  padding-left: 1%;
+  height: 10%;
+  margin-bottom: 1%;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+
+.gallery-slider div {
+  display: inline-block;
+  /* max-width: 104px;
+  max-height: 104px; */
+  margin: 0 25px 0 0;
+}
+
+.gallery-slider div img {
+  object-fit: contain;
+  width: 82px;
+  height: 82px;
+  /* padding: 2px; */
+  border: 2px solid transparent;
+}
+
+.gallery-slider div img.selected {
+  /* width: 100px;
+  height: 100px; */
+  border: 2px solid red;
+  /* padding: 2px; */
+
+  /* transition: transform .2s; */
+}
+
+
+.open-slider-btn {
+  position: absolute;
+  right: 0;
+  top: -38%;
+  border: 1px solid whitesmoke;
+  border-radius: 2px;
+  /* padding: 5px;
+  padding-top: 10px;
+  padding-left: 15px;
+  padding-right: 15px; */
+}
+
+.open-slider-btn button {
+  background-color: black;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 5px;
+  padding-top: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+/* .gallery-slider .mini {
+  display: block;
+  width: 100%;
+  top: 0;
+}
+
+.gallery-slider .mini .open-slider-btn {
+  position: absolute;
+} */
+
+
+div.selectedImg img:hover {
+  /* transform: scale(1.5); */
+}
+
+
+
+.gallery-toolbar {
+  /* height: 5%; */
+
+  display: flex;
+  justify-content: end;
+  padding-top: 1%;
+  padding-right: 1%;
+
+  height: 8%;
+
+  /* width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: end;
+  top: 2%;
+  right: 1%;
+  gap: 1%;
+  height: 10%; */
+}
+
+
+.closeDiv button {
+  background-color: black;
+  border: none;
+  outline: none;
+}
+
+.closeDiv button:hover {
+  cursor: pointer;
+}
+
+.downloadDiv button {
+  background-color: black;
+  border: none;
+  outline: none;
+}
+
+.downloadDiv button:hover {
+  cursor: pointer;
+}
+
+.rotateDiv button {
+  background-color: black;
+  border: none;
+  outline: none;
+}
+
+.rotateDiv button:hover {
+  cursor: pointer;
+}
+
+.flipDiv button {
+  background-color: black;
+  border: none;
+  outline: none;
+}
+
+.flipDiv button:hover {
+  cursor: pointer;
+}
+
+
+
+.zoomInImg {
+  /* animation: zoomInImg 1s ease-in none; */
+  /* transform: scale(1.5); */
+  /* transform: scale(1.5); */
+  transform: scale(2) !important;
+
+
+  transition: transform .2s;
+
+}
+
+.zoomOutImg {
+  /* animation: zoomOutImg 1s ease-out none; */
+  /* transform: scale(1); */
+  /* transform: scale(1); */
+  transform: scale(1);
+
+
+  transition: transform .2s;
+}
+
+
+/* .zoom-in-out-element {
+  animation: zoom-in-zoom-out 1s ease infinite;
+} */
+
+
+
+
+
+.grabbing {
+  cursor: grabbing !important;
+  cursor: -moz-grabbing
+}
