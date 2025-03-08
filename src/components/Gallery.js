@@ -16,7 +16,7 @@ export default function Gallery({ images }) {
     const [offsetY, setOffsetY] = useState(0);
     const [imageLs, setImageLs] = useState(images);
 
-    const F = new GalleryService(document, imageLs, 1, 0, 0, 0);
+    const F = new GalleryService(imageLs, 1, 0, 0, 0);
 
 
     useEffect(() => {
@@ -60,11 +60,11 @@ export default function Gallery({ images }) {
 
 
     return (
-        <div style={{ height: '120vh' }}>
+        <div>
 
             <div>
 
-                <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={F.openModalF}>
+                <button type="button" className="btn btn-primary btn" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={F.openModalF}>
                     Launch gallery
                 </button>
 

@@ -1,7 +1,7 @@
 
 class GalleryService {
 
-    document = ""
+    // document = ""
     images = []
     zoomDeg = 1;
     rotate = 0;
@@ -9,8 +9,8 @@ class GalleryService {
     offsetY = 0;
     flip = 1;
 
-    constructor(document, images, zoomDeg, rotate, offsetX, offsetY) {
-        this.document = document;
+    constructor(images, zoomDeg, rotate, offsetX, offsetY) {
+        // this.document = document;
         this.images = images;
         this.zoomDeg = zoomDeg;
         this.rotate = rotate;
