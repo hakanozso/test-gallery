@@ -64,24 +64,6 @@ export default function Gallery({ images }) {
 
             <div>
 
-
-
-                {/* <div id="slider" class="slider">
-                    <div class="wrapper">
-                        <div id="slides" class="slides">
-                            <span class="slide">Slide 1</span>
-                            <span class="slide">Slide 2</span>
-                            <span class="slide">Slide 3</span>
-                            <span class="slide">Slide 4</span>
-                            <span class="slide">Slide 5</span>
-                        </div>
-                    </div>
-                    <a id="prev" class="control prev"></a>
-                    <a id="next" class="control next"></a>
-                </div> */}
-
-
-
                 <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={F.openModalF}>
                     Launch gallery
                 </button>
