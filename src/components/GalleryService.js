@@ -193,10 +193,10 @@ class GalleryService {
 
         console.log('t', t)
         if (t != 1) {
-            this.rotate = this.rotate + 90
+            this.rotate = (this.rotate + 90) * this.flip;
             // setRotate(rotate - 90)
         } else {
-            this.rotate = this.rotate - 90
+            this.rotate = (this.rotate - 90) * this.flip;
             // setRotate(rotate + 90)
         }
 
