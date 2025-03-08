@@ -92,7 +92,7 @@ export default function Gallery({ images }) {
 
                     <div className="gallery-outer" style={{ backgroundColor: 'black' }}>
 
-
+z
                         <div className="gallery-toolbar">
 
 
