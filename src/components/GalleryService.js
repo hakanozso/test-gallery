@@ -7,7 +7,8 @@ class GalleryService {
     rotate = 0;
     offsetX = 0;
     offsetY = 0;
-    flip = 1;
+    flipX = 1;
+    flipY = 1;
 
     constructor(images, zoomDeg, rotate, offsetX, offsetY) {
         // this.document = document;
@@ -26,14 +27,16 @@ class GalleryService {
 
         this.zoomDeg = 1;
         this.rotate = 0;
-        this.flip = 1;
+        this.flipX = 1;
+        this.flipY = 1;
 
         // setZoomDeg(1);
         // setRotate(0);
 
         document.getElementsByClassName("image2")[0].style.transitionDuration = "0.0s";
-        document.getElementsByClassName("image2")[0].style.transform = `translate3d(${this.offsetX}px,${this.offsetY}px,0px) scale(${this.zoomDeg}) scaleX(${this.flip}) rotate(${this.rotate}deg)`;
-        document.querySelector(".flipDiv svg").style.transform = `scaleX(${this.flip})`;
+        document.getElementsByClassName("image2")[0].style.transform = `translate3d(${this.offsetX}px,${this.offsetY}px,0px) scale(${this.zoomDeg}) scaleX(${this.flipX})  scaleY(${this.flipY}) rotate(${this.rotate}deg)`;
+        document.querySelector(".flipXDiv svg").style.transform = `scaleX(${this.flipX})`;
+        document.querySelector(".flipYDiv svg").style.transform = `scaleY(${this.flipY})`;
 
         // console.log('rotatemod', rotate % 360)
 
@@ -159,7 +162,7 @@ class GalleryService {
         }
         // console.log('first', document.getElementsByClassName("image2")[0].style)
 
-        document.getElementsByClassName("image2")[0].style.transform = `translate3d(${this.offsetX}px,${this.offsetY}px,0px) scale(${this.zoomDeg}) scaleX(${this.flip}) rotate(${this.rotate}deg)`;
+        document.getElementsByClassName("image2")[0].style.transform = `translate3d(${this.offsetX}px,${this.offsetY}px,0px) scale(${this.zoomDeg}) scaleX(${this.flipX})  scaleY(${this.flipY}) rotate(${this.rotate}deg)`;
         document.getElementsByClassName("image2")[0].style.transitionDuration = "0.3s";
 
     }
@@ -193,17 +196,18 @@ class GalleryService {
 
         console.log('t', t)
         if (t != 1) {
-            this.rotate = (this.rotate + 90) * this.flip;
+            this.rotate = (this.flipX == 1 ? this.rotate + 90 : this.rotate - 90);
             // setRotate(rotate - 90)
         } else {
-            this.rotate = (this.rotate - 90) * this.flip;
+            this.rotate = (this.flipX == 1 ? this.rotate - 90 : this.rotate + 90);
             // setRotate(rotate + 90)
         }
 
         console.log('this.rotate', this.rotate)
 
-        document.getElementsByClassName("image2")[0].style.transform = `translate3d(${this.offsetX}px,${this.offsetY}px,0px) scale(${this.zoomDeg}) scaleX(${this.flip}) rotate(${this.rotate}deg)`;
+        document.getElementsByClassName("image2")[0].style.transform = `translate3d(${this.offsetX}px,${this.offsetY}px,0px) scale(${this.zoomDeg}) scaleX(${this.flipX})  scaleY(${this.flipY}) rotate(${this.rotate}deg)`;
         document.getElementsByClassName("image2")[0].style.transitionDuration = "0.8s";
+
 
         // document.getElementsByClassName("image2")[0].style.transform = `scale(${this.zoomDeg}) rotate(${this.rotate})`
         // document.getElementsByClassName("image2")[0].style.transitionDuration = "0.8s";
@@ -224,7 +228,7 @@ class GalleryService {
         //     `translate3d(${e.nativeEvent.offsetX},${e.nativeEvent.offsetY},0px) scale(${this.zoomDeg}) rotate(${this.rotate}deg)`;
 
 
-        e.target.style.transform = `translate3d(${this.offsetX}px,${this.offsetY}px,0px) scale(${this.zoomDeg}) scaleX(${this.flip}) rotate(${this.rotate}deg)`;
+        e.target.style.transform = `translate3d(${this.offsetX}px,${this.offsetY}px,0px) scale(${this.zoomDeg}) scaleX(${this.flipX}) rotate(${this.rotate}deg)`;
 
         this.offsetX = e.nativeEvent.offsetX;
         this.offsetY = e.nativeEvent.offsetY;
@@ -388,10 +392,15 @@ class GalleryService {
 
     }
 
-    symetryF = (e) => {
-        console.log('e', e)
+    symetryF = (axis) => {
+        // console.log('e', e)
 
-        this.flip *= -1;
+        if (axis == 1) {
+            this.flipX *= -1;
+        } else {
+            this.flipY *= -1;
+        }
+
 
         // e.target.style.transform
 
@@ -402,10 +411,11 @@ class GalleryService {
 
 
 
-        document.getElementsByClassName("image2")[0].style.transform = `translate3d(${this.offsetX}px,${this.offsetY}px,0px) scale(${this.zoomDeg}) scaleX(${this.flip}) rotate(${this.rotate}deg)`;
+        document.getElementsByClassName("image2")[0].style.transform = `translate3d(${this.offsetX}px,${this.offsetY}px,0px) scale(${this.zoomDeg}) scaleX(${this.flipX})  scaleY(${this.flipY}) rotate(${this.rotate}deg)`;
 
-        document.querySelector(".flipDiv svg").style.transform = `scaleX(${this.flip})`;
-        // document.getElementsByClassName("flipBtn")[0].style.transform = `scaleY(${this.flip})`;
+        document.querySelector(".flipXDiv svg").style.transform = `scaleX(${this.flipX})`;
+        document.querySelector(".flipYDiv svg").style.transform = `scaleY(${this.flipY})`;
+        // document.getElementsByClassName("flipBtn")[0].style.transform = `scaleY(${this.flipX})`;
 
     }
 

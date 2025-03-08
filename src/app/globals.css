@@ -274,13 +274,15 @@ div.selectedImg img:hover {
   cursor: pointer;
 }
 
-.flipDiv button {
+.flipXDiv button,
+.flipYDiv button {
   background-color: black;
   border: none;
   outline: none;
 }
 
-.flipDiv button:hover {
+.flipXDiv button:hover,
+.flipYDiv button:hover {
   cursor: pointer;
 }
 

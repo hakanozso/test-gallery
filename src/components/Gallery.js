@@ -81,8 +81,21 @@ export default function Gallery({ images }) {
                             {/* <span style={{ color: 'white' }}> {rotate}</span> */}
 
 
-                            <div className="flipDiv">
-                                <button type="button" onClick={F.symetryF}>
+                            <div className="flipYDiv">
+                                <button type="button" onClick={() => F.symetryF(-1)}>
+                                    {/* <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" className="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+                                        <path fillRule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z" />
+                                        <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466" />
+                                    </svg> */}
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" className="bi bi-symmetry-horizontal" viewBox="0 0 16 16">
+                                        <path d="M13.5 7a.5.5 0 0 0 .24-.939l-11-6A.5.5 0 0 0 2 .5v6a.5.5 0 0 0 .5.5zm.485 2.376a.5.5 0 0 1-.246.563l-11 6A.5.5 0 0 1 2 15.5v-6a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 .485.376M11.539 10H3v4.658z" />
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <div className="flipXDiv">
+                                <button type="button" onClick={() => F.symetryF(1)}>
                                     {/* <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" className="bi bi-arrow-clockwise" viewBox="0 0 16 16">
                                         <path fillRule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2z" />
                                         <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466" />
