@@ -172,9 +172,16 @@
   overflow-x: scroll;
 }
 
+.gallery-slider .gallery-slider-content::-webkit-scrollbar {
+  display: none;
+  /* Safari and Chrome */
+
+}
+
+
 .gallery-slider .gallery-slider-content img {
   object-fit: contain;
-  width: 82px;
+  width: 60px;
   min-height: 100% !important;
   height: 100% !important;
   /* padding: 2px; */
