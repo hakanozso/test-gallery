@@ -16,6 +16,10 @@ export default function Home() {
     { id: 7, url: "https://wallpapers.com/images/featured/1920-x-1080-hd-1qq8r4pnn8cmcew4.jpg", selected: 0 },
     { id: 8, url: "https://wallpapers.com/images/featured/1920-x-1080-hd-1qq8r4pnn8cmcew4.jpg", selected: 0 },
     { id: 9, url: "https://wallpapers.com/images/featured/1920-x-1080-hd-1qq8r4pnn8cmcew4.jpg", selected: 0 },
+    { id: 10, url: "https://wallpapers.com/images/featured/1920-x-1080-hd-1qq8r4pnn8cmcew4.jpg", selected: 0 },
+    { id: 11, url: "https://s1.bwallpapers.com/wallpapers/2014/01/24/abstract-1920x1080_112537987.jpg", selected: 0 },
+    { id: 12, url: "https://s1.bwallpapers.com/wallpapers/2014/01/24/abstract-1920x1080_112537987.jpg", selected: 0 },
+    { id: 13, url: "https://s1.bwallpapers.com/wallpapers/2014/01/24/abstract-1920x1080_112537987.jpg", selected: 0 },
   ])
 
 
