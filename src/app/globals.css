@@ -167,6 +167,7 @@
 .gallery-slider .gallery-slider-content {
   display: flex;
   flex-direction: row;
+  align-items: center;
   /* max-width: 104px;
   max-height: 104px; */
   margin: 0 25px 0 0;
@@ -176,7 +177,7 @@
 .gallery-slider .gallery-slider-content img {
   object-fit: contain;
   width: 82px;
-  height: 82px;
+  /* height: 82px; */
   /* padding: 2px; */
   border: 2px solid transparent;
 }
