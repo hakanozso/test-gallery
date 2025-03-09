@@ -49,7 +49,7 @@ export default function Gallery({ images }) {
             return Math.hypot(event.touches[0].pageX - event.touches[1].pageX, event.touches[0].pageY - event.touches[1].pageY);
         };
 
-        document.getElementsByClassName("image2")[0].addEventListener('touchstart', (event) => {
+        document.getElementsByClassName("selectedImg")[0].addEventListener('touchstart', (event) => {
             // Check if the element is an image
             if (event.target.tagName === 'IMG') {
                 if (event.touches.length === 2) {
@@ -63,7 +63,7 @@ export default function Gallery({ images }) {
             }
         });
 
-        document.getElementsByClassName("image2")[0].addEventListener('touchmove', (event) => {
+        document.getElementsByClassName("selectedImg")[0].addEventListener('touchmove', (event) => {
             // Check if the element is an image
             if (event.target.tagName === 'IMG') {
                 if (event.touches.length === 2) {
@@ -108,7 +108,7 @@ export default function Gallery({ images }) {
             }
         });
 
-        document.getElementsByClassName("image2")[0].addEventListener('touchend', (event) => {
+        document.getElementsByClassName("selectedImg")[0].addEventListener('touchend', (event) => {
             // Check if the element is an image
             if (event.target.tagName === 'IMG') {
                 // Reset image to it's original format
