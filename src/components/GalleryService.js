@@ -415,7 +415,6 @@ class GalleryService {
 
         document.querySelector(".flipXDiv svg").style.transform = `scaleX(${this.flipX})`;
         document.querySelector(".flipYDiv svg").style.transform = `scaleY(${this.flipY})`;
-        // document.getElementsByClassName("flipBtn")[0].style.transform = `scaleY(${this.flipX})`;
 
     }
 
