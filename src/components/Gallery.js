@@ -301,19 +301,20 @@ export default function Gallery({ images }) {
 
                         <div className="gallery-slider">
 
-                            {imageLs?.map(image =>
-                                image.selected == 1 ?
-                                    (
-                                        <div key={image.id}>
-                                            <img src={image.url} alt="" onClick={(e) => handleImageSelect(e, image.id)} data-id={image.id} className="image selected" style={{ backgroundImage: "url(" + image.url + ")" }} />
-                                        </div>
-                                    ) : (
-                                        <div key={image.id}>
-                                            <img src={image.url} alt="" onClick={(e) => handleImageSelect(e, image.id)} data-id={image.id} style={{ backgroundImage: "url(" + image.url + ")" }} />
-                                        </div>
-                                    )
-                            )}
-
+                            <div className="gallery-slider-content">
+                                {imageLs?.map(image =>
+                                    image.selected == 1 ?
+                                        (
+                                            <div key={image.id}>
+                                                <img src={image.url} alt="" onClick={(e) => handleImageSelect(e, image.id)} data-id={image.id} className="image selected" style={{ backgroundImage: "url(" + image.url + ")" }} />
+                                            </div>
+                                        ) : (
+                                            <div key={image.id}>
+                                                <img src={image.url} alt="" onClick={(e) => handleImageSelect(e, image.id)} data-id={image.id} style={{ backgroundImage: "url(" + image.url + ")" }} />
+                                            </div>
+                                        )
+                                )}
+                            </div>
                             {/* <div className="mini">
                                 <div className="open-slider-btn">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" class="bi bi-chevron-double-down" viewBox="0 0 16 16">
