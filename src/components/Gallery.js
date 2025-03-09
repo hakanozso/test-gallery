@@ -26,11 +26,112 @@ export default function Gallery({ images }) {
         // document.addEventListener('keydown', F.kyhandleImage, false);
         document.addEventListener("keydown", (event) => {
             F.kyhandleImage(event);
-
-
             setImageLs(F.images)
-
         });
+
+
+
+
+
+        let imageElementScale = 1;
+
+        let start = {};
+
+        // Define a flag to keep track of initial load
+        let initialLoad = true;
+
+        // Define variables to keep track of the existing transform values
+        let translateX = 0;
+        let translateY = 0;
+
+        // Calculate distance between two fingers
+        const distance = (event) => {
+            return Math.hypot(event.touches[0].pageX - event.touches[1].pageX, event.touches[0].pageY - event.touches[1].pageY);
+        };
+
+        document.getElementsByClassName("image2")[0].addEventListener('touchstart', (event) => {
+            // Check if the element is an image
+            if (event.target.tagName === 'IMG') {
+                if (event.touches.length === 2) {
+                    event.preventDefault(); // Prevent page scroll
+
+                    // Calculate where the fingers have started on the X and Y axis
+                    start.x = (event.touches[0].pageX + event.touches[1].pageX) / 2;
+                    start.y = (event.touches[0].pageY + event.touches[1].pageY) / 2;
+                    start.distance = distance(event);
+                }
+            }
+        });
+
+        document.getElementsByClassName("image2")[0].addEventListener('touchmove', (event) => {
+            // Check if the element is an image
+            if (event.target.tagName === 'IMG') {
+                if (event.touches.length === 2) {
+                    event.preventDefault(); // Prevent page scroll
+
+                    // Safari provides event.scale as two fingers move on the screen
+                    // For other browsers just calculate the scale manually
+                    let scale;
+                    if (event.scale) {
+                        scale = event.scale;
+                    } else {
+                        const deltaDistance = distance(event);
+                        scale = deltaDistance / start.distance;
+                    }
+                    imageElementScale = Math.min(Math.max(1, scale), 4);
+
+                    // Check if it's the initial load
+                    if (initialLoad) {
+                        // Get the existing transform style property for proper calculations
+                        var style = window.getComputedStyle(event.target);
+                        const existingTransform = style.getPropertyValue('transform');
+
+                        if (existingTransform.toString() !== "none") {
+                            const rect = event.target.getBoundingClientRect();
+                            translateX = -rect.width / 2;
+                            translateY = -rect.height / 2;
+                        }
+                        initialLoad = false; // Update the flag to indicate initial load has occurred
+                    }
+
+                    // Calculate how much the fingers have moved on the X and Y axis
+                    const deltaX = (((event.touches[0].pageX + event.touches[1].pageX) / 2) - start.x) * 2; // x2 for accelerated movement
+                    const deltaY = (((event.touches[0].pageY + event.touches[1].pageY) / 2) - start.y) * 2; // x2 for accelerated movement
+
+                    // Combine the existing transform with the additional calculations
+                    const transform = `translate3d(` + (translateX + deltaX) + `px, ` + (translateY + deltaY) + `px, 0) scale(` + imageElementScale + `)`;
+                    event.target.style.transform = transform;
+
+                    event.target.style.WebkitTransform = transform;
+                    event.target.style.zIndex = "9999";
+                }
+            }
+        });
+
+        document.getElementsByClassName("image2")[0].addEventListener('touchend', (event) => {
+            // Check if the element is an image
+            if (event.target.tagName === 'IMG') {
+                // Reset image to it's original format
+                event.target.style.transform = "";
+                event.target.style.WebkitTransform = "";
+                event.target.style.zIndex = "";
+            }
+            //reset initialLoad and translateX and translateY needed to apply the existing transform on image
+            initialLoad = true;
+            translateX = 0;
+            translateY = 0;
+        });
+
+
+
+
+
+
+
+
+
+
+
 
     }, [])
 
@@ -158,7 +259,7 @@ export default function Gallery({ images }) {
 
                         <div className="gallery-content">
 
-                            <div className="selectedImg" onWheel={(e) => F.whlt(e)} >
+                            <div className="selectedImg" onWheel={(e) => F.whlt(e)}>
 
 
                                 <div >

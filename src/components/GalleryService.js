@@ -145,7 +145,7 @@ class GalleryService {
     }
 
     whlt = (e) => {
-        console.log('e', e.nativeEvent.offsetX)
+        console.log('e', e)
         console.log('zoomDeg', this.zoomDeg)
 
         if (e.deltaY > 0) {
