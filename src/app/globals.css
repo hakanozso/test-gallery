@@ -199,7 +199,9 @@
   /* margin: 0.5%;
   margin-left: 0.5%;
   margin-right: 0px; */
-  margin-bottom: 4px;
+  /* margin-bottom: 4px; */
+  margin: 8px;
+  margin-bottom: 10px;
 }
 
 .gallery-slider .gallery-slider-content img {
