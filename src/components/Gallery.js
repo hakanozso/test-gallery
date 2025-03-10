@@ -153,12 +153,23 @@ export default function Gallery({ images }) {
 
 
 
+    const a = (e) => {
+        // var object1;
+        // if (e.target.nodeName == "IMG") {
+        //     object1 = 
+        //     // e.target.parentElement
+        //     console.log('object :>> ', e.target.parentElement.parentElement.className);
+        // }
+        console.log('e :>> ', e);
+        // document.getElementsByClassName("gallery-slider-content")[0].scrollLeft += 30;
 
-    // var slider = document.getElementById('slider'),
-    //     sliderItems = document.getElementById('slides'),
-    //     prev = document.getElementById('prev'),
-    //     next = document.getElementById('next');
+        if (e.deltaY < 0) {
+            document.getElementsByClassName("gallery-slider-content")[0].scrollLeft -= 150;
+        } else {
+            document.getElementsByClassName("gallery-slider-content")[0].scrollLeft += 150;
+        }
 
+    }
 
     return (
         <div>
@@ -302,7 +313,7 @@ export default function Gallery({ images }) {
 
                         <div className="gallery-slider">
 
-                            <div className="gallery-slider-content">
+                            <div className="gallery-slider-content" onWheel={a}>
                                 {imageLs?.map(image =>
                                     image.selected == 1 ?
                                         (

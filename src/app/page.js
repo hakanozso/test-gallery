@@ -28,24 +28,17 @@ export default function Home() {
   ])
 
 
+  const a = (e) => {
+    console.log('e :>> ', e.de);
+  }
+
   return (
     <>
       <Gallery images={images} />
 
 
-      <div class="container">
-        <div class="content">Content 1</div>
-        <div class="content">Content 2</div>
-        <div class="content">Content 3</div>
-        <div class="content">Content 4</div>
-        <div class="content">Content 5</div>
-        <div class="content">Content 6</div>
-        <div class="content">Content 7</div>
-      </div>
 
 
     </>
-
-
   );
 }
