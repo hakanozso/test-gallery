@@ -163,9 +163,9 @@
   overflow-x: scroll; */
 
   /* margin-bottom: 2%; */
-  margin-left: 1%;
-  margin-right: 1%;
-  margin-bottom: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
 
 
 }
@@ -190,7 +190,7 @@
 }
 
 .gallery-slider .gallery-slider-content::-webkit-scrollbar {
-  display: none;
+  /* display: none; */
   /* Safari and Chrome */
 
 }
@@ -371,4 +371,35 @@ div.selectedImg img:hover {
 .grabbing {
   cursor: grabbing !important;
   cursor: -moz-grabbing
+}
+
+
+
+
+
+.container {
+  /* display: flex;
+  flex-direction: row; */
+  /* an inline display is used here */
+
+  width: 180px;
+  height: 600px;
+  overflow-y: scroll;
+
+  transform: rotate(-90deg);
+}
+
+
+.container::-webkit-scrollbar {
+  display: none;
+}
+
+.content {
+  width: 140px;
+  height: 140px;
+  margin: 10px;
+
+  background-color: #a8a8df;
+
+  transform: rotate(90deg);
 }

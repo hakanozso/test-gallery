@@ -20,10 +20,32 @@ export default function Home() {
     { id: 11, url: "https://s1.bwallpapers.com/wallpapers/2014/01/24/abstract-1920x1080_112537987.jpg", selected: 0 },
     { id: 12, url: "https://s1.bwallpapers.com/wallpapers/2014/01/24/abstract-1920x1080_112537987.jpg", selected: 0 },
     { id: 13, url: "https://s1.bwallpapers.com/wallpapers/2014/01/24/abstract-1920x1080_112537987.jpg", selected: 0 },
+    { id: 14, url: "https://s1.bwallpapers.com/wallpapers/2014/01/24/abstract-1920x1080_112537987.jpg", selected: 0 },
+    { id: 15, url: "https://s1.bwallpapers.com/wallpapers/2014/01/24/abstract-1920x1080_112537987.jpg", selected: 0 },
+    { id: 16, url: "https://s1.bwallpapers.com/wallpapers/2014/01/24/abstract-1920x1080_112537987.jpg", selected: 0 },
+    { id: 17, url: "https://s1.bwallpapers.com/wallpapers/2014/01/24/abstract-1920x1080_112537987.jpg", selected: 0 },
+    { id: 18, url: "https://s1.bwallpapers.com/wallpapers/2014/01/24/abstract-1920x1080_112537987.jpg", selected: 0 },
   ])
 
 
   return (
-    <Gallery images={images} />
+    <>
+      <Gallery images={images} />
+
+
+      <div class="container">
+        <div class="content">Content 1</div>
+        <div class="content">Content 2</div>
+        <div class="content">Content 3</div>
+        <div class="content">Content 4</div>
+        <div class="content">Content 5</div>
+        <div class="content">Content 6</div>
+        <div class="content">Content 7</div>
+      </div>
+
+
+    </>
+
+
   );
 }
