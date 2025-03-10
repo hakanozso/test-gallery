@@ -299,6 +299,7 @@ export default function Gallery({ images }) {
                         </div>
 
 
+
                         <div className="gallery-slider">
 
                             <div className="gallery-slider-content">

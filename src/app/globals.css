@@ -195,16 +195,16 @@
 }
 
 .gallery-slider .gallery-slider-content div {
-  margin: 0.5%;
+  /* margin: 0.5%;
   margin-left: 0.5%;
-  margin-right: 0.5%;
+  margin-right: 0px; */
 }
 
 .gallery-slider .gallery-slider-content img {
   /* position: relative; */
   object-fit: contain;
   width: 90px;
-  height: 100%;
+  height: 92%;
   /* min-height: 100% !important;
   height: 100% !important; */
   /* padding: 2px; */
