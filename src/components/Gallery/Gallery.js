@@ -297,25 +297,28 @@ export default function Gallery({ images }) {
                         </div>
 
 
-                        <button type="button" className="gallery-prev" onClick={() => { handleImage(-1) }} onTouchStart={(e) => {
-                            console.log('easdasdasd :>> ', e.target);
-                            document.querySelector(".gallery-prev").style.backgroundColor = "white";
-                            document.querySelector(".gallery-prev svg").style.fill = "black";
-                            // e.target.style.backgroundColor = "white";
-                            // e.target.children[0].style.fill = "black"
-                        }}
+                        <button type="button" className="gallery-prev" onClick={() => { handleImage(-1) }}
+                            onTouchStart={(e) => {
+                                document.querySelector(".gallery-prev").style.backgroundColor = "white";
+                                document.querySelector(".gallery-prev svg").style.fill = "black";
+                            }}
                             onTouchEnd={(e) => {
-                                console.log('easdasdasd :>> ', e.target);
                                 document.querySelector(".gallery-prev").style.backgroundColor = "black";
                                 document.querySelector(".gallery-prev svg").style.fill = "white";
-                                // e.target.style.backgroundColor = "black";
-                                // e.target.children[0].style.fill = "white"
                             }}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" className="bi bi-chevron-left" viewBox="0 0 16 16">
                                 <path fillRule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
                             </svg>
                         </button>
-                        <button type="button" className="gallery-next" onClick={() => { handleImage(1) }}>
+                        <button type="button" className="gallery-next" onClick={() => { handleImage(1) }}
+                            onTouchStart={(e) => {
+                                document.querySelector(".gallery-next").style.backgroundColor = "white";
+                                document.querySelector(".gallery-next svg").style.fill = "black";
+                            }}
+                            onTouchEnd={(e) => {
+                                document.querySelector(".gallery-next").style.backgroundColor = "black";
+                                document.querySelector(".gallery-next svg").style.fill = "white";
+                            }}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" className="bi bi-chevron-right" viewBox="0 0 16 16">
                                 <path fillRule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
                             </svg>
