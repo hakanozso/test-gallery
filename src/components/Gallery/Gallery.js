@@ -21,6 +21,14 @@ export default function Gallery({ images }) {
 
     useEffect(() => {
 
+
+        document.querySelector(".gallery-prev").addEventListener('touchstart', function (e) {
+            console.log("event start")
+
+        }, false);
+
+
+
         console.log('images', imageLs)
 
         // document.addEventListener('keydown', F.kyhandleImage, false);
@@ -171,6 +179,18 @@ export default function Gallery({ images }) {
 
     }
 
+    const prev_next_show_attr = (a) => {
+        console.log('"show" :>> ', a);
+        document.querySelector(`.${a}`).style.backgroundColor = "white";
+        document.querySelector(`.${a} svg`).style.fill = "black";
+    }
+
+    const prev_next_hide_attr = (a) => {
+        console.log('"hide" :>> ', a);
+        document.querySelector(`.${a}`).style.backgroundColor = "black";
+        document.querySelector(`.${a} svg`).style.fill = "white";
+    }
+
     return (
         <div className="a">
 
@@ -268,61 +288,42 @@ export default function Gallery({ images }) {
 
                     </div>
 
-                    <div className="gallery-content">
+                    <div className="gallery-content" onTouchStart={() => {
+                        console.log('object :>> ', "object");
+                    }}>
 
                         <div className="selectedImg" onWheel={(e) => F.whlt(e)}>
 
-
-                            <div >
+                            <div>
                                 <img src={imageLs?.find(i => i.selected == 1).url} className="image2" alt=""
 
                                     // onMouseDown={S.dragStart} onTouchStart={S.dragStart}
 
                                     // onDurationChange={F.galleryGrab} 
                                     onDoubleClick={F.galleryZoom}
-                                //  style={{ transform: 'scale(' + F.zoomDeg + ') rotate(' + F.rotate + 'deg)', objectFit: 'contain' }}
-
-                                // style={{
-                                //     transform: `translate3d(` + offsetX + `px,` + offsetY + `px, 0px)` +
-                                //         'rotate(' + rotate + 'deg)' +
-                                //         'scale(' + zoomDeg + ')'
-                                // }}
                                 />
-
                             </div>
-
-
-
-
                         </div>
 
 
-                        <button type="button" className="gallery-prev" onClick={() => { handleImage(-1) }}
-                            onTouchStart={(e) => {
-                                document.querySelector(".gallery-prev").style.backgroundColor = "white";
-                                document.querySelector(".gallery-prev svg").style.fill = "black";
-                            }}
-                            onTouchEnd={(e) => {
-                                document.querySelector(".gallery-prev").style.backgroundColor = "black";
-                                document.querySelector(".gallery-prev svg").style.fill = "white";
+                        <button type="button" className="gallery-prev" onClick={() => { handleImage(-1) }} onTouchStart={() => {
+                            console.log('naber :>> ', "naber");
+                            prev_next_show_attr("gallery-prev")
+                        }}
+                            onTouchEnd={() => {
+                                console.log('naber :>> ', "naber");
+                                prev_next_hide_attr("gallery-prev")
                             }}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" className="bi bi-chevron-left" viewBox="0 0 16 16">
                                 <path fillRule="evenodd" d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0" />
                             </svg>
                         </button>
-                        <button type="button" className="gallery-next" onClick={() => { handleImage(1) }}
-                            onTouchStart={(e) => {
-                                document.querySelector(".gallery-next").style.backgroundColor = "white";
-                                document.querySelector(".gallery-next svg").style.fill = "black";
-                            }}
-                            onTouchEnd={(e) => {
-                                document.querySelector(".gallery-next").style.backgroundColor = "black";
-                                document.querySelector(".gallery-next svg").style.fill = "white";
-                            }}>
+                        <button type="button" className="gallery-next" onClick={() => { handleImage(1) }}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" className="bi bi-chevron-right" viewBox="0 0 16 16">
                                 <path fillRule="evenodd" d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708" />
                             </svg>
                         </button>
+
                     </div>
 
 

@@ -57,7 +57,7 @@ class GalleryService {
 
     handleImage = (rotate) => {
 
-        console.log('rotate :>> ', rotate);
+        // console.log('rotate :>> ', rotate);
 
         const myNextList = [...this.images];
 
@@ -73,14 +73,14 @@ class GalleryService {
         let prev = myNextList[selected_image2 - 1]
         let next = myNextList[selected_image2 + 1]
         if (!prev) {
-            console.log('önceki :>> ', "önceki null");
+            // console.log('önceki :>> ', "önceki null");
             prev = myNextList[this.images.length - 1]
         }
         if (!next) {
             next = myNextList[0]
         }
 
-        console.log('selected_image :>> ', selected_image, selected_image2, "-----", "prev: ", prev, "next: ", next);
+        // console.log('selected_image :>> ', selected_image, selected_image2, "-----", "prev: ", prev, "next: ", next);
 
         if (rotate === 1) {
             this.handleImageSelect("", next.id)

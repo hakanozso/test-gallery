@@ -407,6 +407,6 @@ div.selectedImg img:hover {
   }
 
   .gallery-content .selectedImg img {
-    max-width: 100vw;
+    max-width: 100%;
   }
 }
