@@ -113,9 +113,13 @@
   fill: currentColor;
 }
 
-.gallery-prev:not(:hover) {
+.gallery-prev:not(:active) {
   background-color: black;
   /* display: none; */
+}
+
+.gallery-prev:not(:active) svg {
+  fill: white;
 }
 
 /* .gallery-prev:not(:focus) {
