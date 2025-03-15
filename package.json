@@ -1,24 +1,31 @@
 {
   "name": "test-gallery",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.15",
+  "private": false,
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "rollup": "rollup -c --bundleConfigAsCjs"
   },
   "dependencies": {
     "bootstrap-icons": "^1.11.3",
     "next": "15.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-grid-gallery": "^1.0.1",
-    "react-image-lightbox": "^5.1.4"
+    "react-grid-gallery": "^1.0.1"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@rollup/plugin-commonjs": "^28.0.3",
+    "@rollup/plugin-node-resolve": "^16.0.1",
+    "@rollup/plugin-terser": "^0.4.4",
+    "@rollup/plugin-typescript": "^12.1.2",
     "eslint": "^9",
-    "eslint-config-next": "15.1.6"
+    "eslint-config-next": "15.1.6",
+    "rollup": "^4.35.0",
+    "rollup-plugin-dts": "^6.1.1",
+    "rollup-plugin-peer-deps-external": "^2.2.4"
   }
 }
