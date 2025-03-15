@@ -381,3 +381,11 @@ div.selectedImg img:hover {
   cursor: grabbing !important;
   cursor: -moz-grabbing
 }
+
+
+
+@media screen and (min-width: 100px) and (max-width: 600px) {
+  .gallery-content .selectedImg img {
+    max-width: 100vw;
+  }
+}
