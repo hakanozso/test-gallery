@@ -104,14 +104,14 @@
   border-radius: 0.5rem;
 }
 
-/* .gallery-prev:hover {
+.gallery-prev:hover {
   background-color: whitesmoke;
   cursor: pointer;
 }
 
 .gallery-prev:hover svg {
   fill: black;
-} */
+}
 
 
 /* .gallery-prev:not(:hover) {
