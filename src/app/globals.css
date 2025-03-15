@@ -110,17 +110,17 @@
 }
 
 .gallery-prev:hover svg {
-  fill: currentColor;
+  fill: black;
 }
 
-.gallery-prev:not(:active) {
+.gallery-prev:not(:hover):not(:focus-within) {
   background-color: black;
-  /* display: none; */
 }
 
-.gallery-prev:not(:active) svg {
+.gallery-prev:not(:hover):not(:focus-within) svg {
   fill: white;
 }
+
 
 /* .gallery-prev:not(:focus) {
   background-color: black;
