@@ -107,26 +107,13 @@
 .gallery-prev:hover {
   background-color: whitesmoke;
   cursor: pointer;
+  user-select: none;
+  pointer-events: none;
 }
 
 .gallery-prev:hover svg {
   fill: black;
 }
-
-
-/* .gallery-prev:not(:hover) {
-  background-color: black;
-}
-
-.gallery-prev:not(:hover) svg {
-  fill: white;
-} */
-
-
-/* .gallery-prev:not(:focus) {
-  background-color: black;
-} */
-
 
 
 .gallery-next {
@@ -149,6 +136,8 @@
 .gallery-next:hover {
   background-color: whitesmoke;
   cursor: pointer;
+  user-select: none;
+  pointer-events: none;
   /* opacity: 0.2; */
 }
 
