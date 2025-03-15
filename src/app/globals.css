@@ -113,13 +113,14 @@
   fill: black;
 }
 
-.gallery-prev:not(:hover):not(:focus-within) {
+
+/* .gallery-prev:not(:hover) {
   background-color: black;
 }
 
-.gallery-prev:not(:hover):not(:focus-within) svg {
+.gallery-prev:not(:hover) svg {
   fill: white;
-}
+} */
 
 
 /* .gallery-prev:not(:focus) {
