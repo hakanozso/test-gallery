@@ -1,9 +1,9 @@
 
 "use client"
 
-import Lightbox from "react-image-lightbox";
+// import Lightbox from "react-image-lightbox";
 
-import "react-image-lightbox/style.css";
+// import "react-image-lightbox/style.css";
 // import { images } from "../images";
 import { useState } from "react";
 
