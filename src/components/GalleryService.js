@@ -83,8 +83,47 @@ class GalleryService {
         // console.log('selected_image :>> ', selected_image, selected_image2, "-----", "prev: ", prev, "next: ", next);
 
         if (rotate === 1) {
+
+            console.log('next :>> ', next);
+            console.log('next == myNextList[0] :>> ', next == myNextList[0]);
+            console.log('object :>> ', document.getElementsByClassName("gallery-slider-content")[0].scrollLeft);
+
+            if (next === myNextList[0]) {
+                // document.getElementsByClassName("gallery-slider-content")[0].style.transition = "spin 4s linear infinite"
+                // document.getElementsByClassName("gallery-slider-content")[0].style.transitionDuration = "0.3s";
+                // document.getElementsByClassName("gallery-slider-content")[0].style.transform 
+                document.getElementsByClassName("gallery-slider-content")[0].scrollTo(0, 0);
+            } else {
+                document.getElementsByClassName("gallery-slider-content")[0].scrollTo(next.id * 90, 0);
+            }
+
+
+
+
+
+
             this.handleImageSelect("", next.id)
         } else {
+
+            console.log('prev :>> ', prev);
+            console.log('prev == myNextList[0] :>> ', prev == myNextList[0]);
+            console.log('scrolleft :>> ', document.getElementsByClassName("gallery-slider-content")[0].scrollLeft);
+
+            if (prev === myNextList[0]) {
+                // document.getElementsByClassName("gallery-slider-content")[0].style.transition = "spin 4s linear infinite"
+                // document.getElementsByClassName("gallery-slider-content")[0].style.transitionDuration = "0.3s";
+                // document.getElementsByClassName("gallery-slider-content")[0].style.transform 
+                document.getElementsByClassName("gallery-slider-content")[0].scrollTo(0, 0);
+            } else {
+                // document.getElementsByClassName("gallery-slider-content")[0].scrollTo(-((myNextList.length - next.id) * 90), 0);
+                document.getElementsByClassName("gallery-slider-content")[0].scrollTo(-90, 0);
+            }
+
+
+
+
+
+            // document.getElementsByClassName("gallery-slider-content")[0].scrollLeft -= 150;
             this.handleImageSelect("", prev.id)
         }
 
@@ -102,6 +141,8 @@ class GalleryService {
     }
 
     static galleryGrab = (e) => {
+
+
 
         console.log("onClickCapture!");
 

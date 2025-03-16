@@ -14,35 +14,63 @@
 }
 
 
-.gallery-content {
+/* Gallery Toolbar */
 
+.gallery-toolbar {
+  /* height: 5%; */
+
+  display: flex;
+  justify-content: end;
+  padding-top: 8px;
+  padding-right: 8px;
+
+  height: 8%;
+
+  /* width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: end;
+  top: 2%;
+  right: 1%;
+  gap: 1%;
+  height: 10%; */
+}
+
+
+.closeDiv button,
+.downloadDiv button,
+.rotateDiv button {
+  background-color: black;
+  border: none;
+  outline: none;
+}
+
+.closeDiv button:hover,
+.downloadDiv button:hover,
+.rotateDiv button:hover {
+  cursor: pointer;
+}
+
+
+.flipXDiv button,
+.flipYDiv button {
+  background-color: black;
+  border: none;
+  outline: none;
+}
+
+.flipXDiv button:hover,
+.flipYDiv button:hover {
+  cursor: pointer;
+}
+
+
+/* Gallery Content */
+
+
+.gallery-content {
   height: 77%;
   margin-bottom: 2%;
-
-  /* position: absolute;
-  width: 100%;
-  height: 80%; */
-
-
-
-  /* overflow-y: hidden;
-  overflow-x: hidden; */
-
-
-  /* display: flex;
-  justify-self: center;
-  justify-content: center;
-  justify-items: center; */
-
-
-  /* width: 100%; */
-
-  /* margin: auto; */
-  /* margin-top: 20%; */
-
-  /* display: flex; */
-
-
 }
 
 .gallery-content .selectedImg {
@@ -150,6 +178,8 @@
   fill: currentColor;
 }
 
+/* Gallery Slider */
+
 .gallery-slider {
   display: block;
   /* height: 11%; */
@@ -160,13 +190,6 @@
   /* border: 1px solid whitesmoke;
   border-radius: 0.5rem; */
 
-  /* padding-top: 0.5%;
-  padding-bottom: 0.5%;
-  padding-left: 0.5%;
-  margin-bottom: 0.5%;
-  margin-left: 0.5%;
-  margin-right: 0.5%;
- */
 
   /* overflow-y: scroll;
   overflow-x: scroll; */
@@ -282,69 +305,6 @@ div.selectedImg img:hover {
 
 
 
-.gallery-toolbar {
-  /* height: 5%; */
-
-  display: flex;
-  justify-content: end;
-  padding-top: 1%;
-  padding-right: 1%;
-
-  height: 8%;
-
-  /* width: 100%;
-  position: absolute;
-  display: flex;
-  justify-content: end;
-  top: 2%;
-  right: 1%;
-  gap: 1%;
-  height: 10%; */
-}
-
-
-.closeDiv button {
-  background-color: black;
-  border: none;
-  outline: none;
-}
-
-.closeDiv button:hover {
-  cursor: pointer;
-}
-
-.downloadDiv button {
-  background-color: black;
-  border: none;
-  outline: none;
-}
-
-.downloadDiv button:hover {
-  cursor: pointer;
-}
-
-.rotateDiv button {
-  background-color: black;
-  border: none;
-  outline: none;
-}
-
-.rotateDiv button:hover {
-  cursor: pointer;
-}
-
-.flipXDiv button,
-.flipYDiv button {
-  background-color: black;
-  border: none;
-  outline: none;
-}
-
-.flipXDiv button:hover,
-.flipYDiv button:hover {
-  cursor: pointer;
-}
-
 
 
 .zoomInImg {
@@ -387,9 +347,9 @@ div.selectedImg img:hover {
 @media screen and (min-width: 100px) and (max-width: 600px) {
 
   .gallery-toolbar {
-    padding-top: 10px;
+    padding-top: 8px;
+    padding-right: 8px;
   }
-
 
   .gallery-prev {
     margin-left: 2%;
@@ -398,8 +358,6 @@ div.selectedImg img:hover {
     background-color: black;
     opacity: 0.3;
   }
-
-
 
   .gallery-next {
     top: 25%;

@@ -172,9 +172,9 @@ export default function Gallery({ images }) {
         // document.getElementsByClassName("gallery-slider-content")[0].scrollLeft += 30;
 
         if (e.deltaY < 0) {
-            document.getElementsByClassName("gallery-slider-content")[0].scrollLeft -= 150;
+            document.getElementsByClassName("gallery-slider-content")[0].scrollLeft -= 180;
         } else {
-            document.getElementsByClassName("gallery-slider-content")[0].scrollLeft += 150;
+            document.getElementsByClassName("gallery-slider-content")[0].scrollLeft += 180;
         }
 
     }
