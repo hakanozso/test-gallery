@@ -355,15 +355,17 @@ div.selectedImg img:hover {
     margin-left: 2%;
     top: 25%;
     height: 40%;
-    background-color: black;
-    opacity: 0.3;
+    /* background-color: black; */
+    background: rgba(255, 255, 255, 0.15);
+    /* give opacity to bg color only */
   }
 
   .gallery-next {
     top: 25%;
     height: 40%;
     background-color: black;
-    opacity: 0.3;
+    background: rgba(255, 255, 255, 0.15);
+
   }
 
   .gallery-content .selectedImg {
