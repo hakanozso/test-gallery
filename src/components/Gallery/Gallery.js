@@ -181,13 +181,16 @@ export default function Gallery({ images }) {
 
     const prev_next_show_attr = (a) => {
         console.log('"show" :>> ', a);
-        document.querySelector(`.${a}`).style.backgroundColor = "white";
+        // document.querySelector(`.${a}`).style.backgroundColor = "white";
+        document.querySelector(`.${a}`).style.background = "rgba(255, 255, 255, 0.15)"
+
         document.querySelector(`.${a} svg`).style.fill = "black";
     }
 
     const prev_next_hide_attr = (a) => {
         console.log('"hide" :>> ', a);
-        document.querySelector(`.${a}`).style.backgroundColor = "black";
+        // document.querySelector(`.${a}`).style.backgroundColor = "black";
+        document.querySelector(`.${a}`).style.background = "rgba(255, 255, 255, 0.15)"
         document.querySelector(`.${a} svg`).style.fill = "white";
     }
 
