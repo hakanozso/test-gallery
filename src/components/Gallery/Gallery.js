@@ -348,11 +348,11 @@ export default function Gallery({ images }) {
                                 image.selected == 1 ?
                                     (
                                         <div key={image.id}>
-                                            <img src={image.url} alt="" onClick={(e) => handleImageSelect(e, image.id)} data-id={image.id} className="slider-image selected" style={{ backgroundImage: "url(" + image.url + ")" }} />
+                                            <img src={image.url} alt="" onClick={(e) => handleImageSelect(e, image)} data-id={image.id} className="slider-image selected" style={{ backgroundImage: "url(" + image.url + ")" }} />
                                         </div>
                                     ) : (
                                         <div key={image.id}>
-                                            <img src={image.url} alt="" onClick={(e) => handleImageSelect(e, image.id)} data-id={image.id} className="slider-image" style={{ backgroundImage: "url(" + image.url + ")" }} />
+                                            <img src={image.url} alt="" onClick={(e) => handleImageSelect(e, image)} data-id={image.id} className="slider-image" style={{ backgroundImage: "url(" + image.url + ")" }} />
                                         </div>
                                     )
                             )}

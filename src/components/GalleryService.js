@@ -22,7 +22,8 @@ class GalleryService {
 
     handleImageSelect = (rotate, image) => {
 
-        var image_id = image.id
+
+        console.log('image ne olcak :>> ', image);
 
         this.zoomDeg = 1;
         this.rotate = 0;
@@ -40,25 +41,20 @@ class GalleryService {
         const prev_selected_image = myNextList.find(
             a => a.selected === 1
         );
+        console.log('prev_selected_image :>> ', prev_selected_image);
         prev_selected_image.selected = 0;
         const my_image = myNextList.find(
-            a => a.id === image_id
+            a => a.id === image.id
         );
+        console.log('my_image :>> ', my_image);
         my_image.selected = 1;
 
-        console.log('my_image :>> ', my_image);
+        console.log('myNextList :>> ', myNextList);
 
-        // console.log('newls :>> ', myNextList);
-
-        // setImages(myNextList);
         this.images = myNextList
-
 
         console.log('dikat :>> ', document.querySelector(".slider-image.selected").getBoundingClientRect());
 
-
-
-        // [{x:1},{x:2},{x:3}].findIndex(o => o.x == 2) // => 1
         myNextList.findIndex(o => o == my_image) // => 1
         console.log('myNextList.findIndex(o => o == my_image) :>> ', myNextList.findIndex(o => o == my_image));
 
@@ -70,11 +66,12 @@ class GalleryService {
         } else if (myNextList.findIndex(o => o == my_image) == myNextList.length - 1) {
             document.getElementsByClassName("gallery-slider-content")[0]
                 .scrollTo(90000, 0);
-        } else if (myNextList.findIndex(o => o == my_image) < myNextList.findIndex(o => o == prev_selected_image)) {
-
+        } else if (myNextList.findIndex(o => o == my_image) <= myNextList.findIndex(o => o == prev_selected_image)) {
+            console.log('"sola gidis" :>> ', "sola gidis");
             document.getElementsByClassName("gallery-slider-content")[0].scrollBy(document.querySelector(".slider-image.selected").getBoundingClientRect().left - 170, 0);
 
         } else {
+            console.log('"saga gidis" :>> ', "saga gidis");
             document.getElementsByClassName("gallery-slider-content")[0]
                 .scrollBy((document.querySelector(".slider-image.selected").getBoundingClientRect().left + 50), 0);
         }
