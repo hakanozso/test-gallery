@@ -40,7 +40,9 @@
 
 .closeDiv button,
 .downloadDiv button,
-.rotateDiv button {
+.rotateDiv button,
+.flipXDiv button,
+.flipYDiv button {
   background-color: black;
   border: none;
   outline: none;
@@ -50,18 +52,7 @@
 
 .closeDiv button:hover,
 .downloadDiv button:hover,
-.rotateDiv button:hover {
-  cursor: pointer;
-}
-
-
-.flipXDiv button,
-.flipYDiv button {
-  background-color: black;
-  border: none;
-  outline: none;
-}
-
+.rotateDiv button:hover,
 .flipXDiv button:hover,
 .flipYDiv button:hover {
   cursor: pointer;
