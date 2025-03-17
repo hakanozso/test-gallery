@@ -20,18 +20,14 @@ class GalleryService {
 
     }
 
-    handleImageSelect = (e, image_id) => {
+    handleImageSelect = (rotate, image) => {
 
-        // console.log('this.document', this.document)
-        // console.log('e', e.ownerDocument)
+        var image_id = image.id
 
         this.zoomDeg = 1;
         this.rotate = 0;
         this.flipX = 1;
         this.flipY = 1;
-
-        // setZoomDeg(1);
-        // setRotate(0);
 
         document.getElementsByClassName("image2")[0].style.transitionDuration = "0.0s";
         document.getElementsByClassName("image2")[0].style.transform = `translate3d(${this.offsetX}px,${this.offsetY}px,0px) scale(${this.zoomDeg}) scaleX(${this.flipX})  scaleY(${this.flipY}) rotate(${this.rotate}deg)`;
@@ -49,12 +45,45 @@ class GalleryService {
             a => a.id === image_id
         );
         my_image.selected = 1;
+
+        console.log('my_image :>> ', my_image);
+
         // console.log('newls :>> ', myNextList);
+
         // setImages(myNextList);
         this.images = myNextList
 
 
         console.log('dikat :>> ', document.querySelector(".slider-image.selected").getBoundingClientRect());
+
+
+
+        // [{x:1},{x:2},{x:3}].findIndex(o => o.x == 2) // => 1
+        myNextList.findIndex(o => o == my_image) // => 1
+        console.log('myNextList.findIndex(o => o == my_image) :>> ', myNextList.findIndex(o => o == my_image));
+
+        if (myNextList.findIndex(o => o == my_image) == 0) {
+
+            console.log('"ilk eleman" :>> ', "ilk eleman");
+            document.getElementsByClassName("gallery-slider-content")[0]
+                .scrollTo(0, 0);
+        } else if (myNextList.findIndex(o => o == my_image) == myNextList.length - 1) {
+            document.getElementsByClassName("gallery-slider-content")[0]
+                .scrollTo(90000, 0);
+        } else if (myNextList.findIndex(o => o == my_image) < myNextList.findIndex(o => o == prev_selected_image)) {
+
+            document.getElementsByClassName("gallery-slider-content")[0].scrollBy(document.querySelector(".slider-image.selected").getBoundingClientRect().left - 170, 0);
+
+        } else {
+            document.getElementsByClassName("gallery-slider-content")[0]
+                .scrollBy((document.querySelector(".slider-image.selected").getBoundingClientRect().left + 50), 0);
+        }
+
+
+        // document.getElementsByClassName("gallery-slider-content")[0]
+        //     .scrollBy((document.querySelector(".slider-image.selected").getBoundingClientRect().left + 50), 0);
+
+
 
     }
 
@@ -86,75 +115,16 @@ class GalleryService {
 
         // console.log('selected_image :>> ', selected_image, selected_image2, "-----", "prev: ", prev, "next: ", next);
 
+        // console.log('next :>> ', next);
+        // console.log('next == myNextList[0] :>> ', next == myNextList[0]);
+        // console.log('scroll mevcut konum :>> ', document.getElementsByClassName("gallery-slider-content")[0].scrollLeft);
 
-        console.log('next :>> ', next);
-        console.log('next == myNextList[0] :>> ', next == myNextList[0]);
-        console.log('scroll mevcut konum :>> ', document.getElementsByClassName("gallery-slider-content")[0].scrollLeft);
-
-        console.log('dikat :>> ', document.querySelector(".slider-image.selected").getBoundingClientRect());
+        // console.log('dikat :>> ', document.querySelector(".slider-image.selected").getBoundingClientRect());
 
         if (rotate === 1) {
-
-
-
-            // console.log('dikat :>> ', document.querySelector(".slider-image.selected"));
-
-            // document.querySelector(".slider-image .selected")[0].style.display = "none"
-
-            if (next === myNextList[0]) {
-
-                console.log('"sonraki eleman ilk elemana eşit" :>> ', "sonraki eleman ilk elemana eşit");
-                document.getElementsByClassName("gallery-slider-content")[0].scrollTo(0, 0);
-
-            } else if (next == myNextList[this.images.length - 1]) {
-
-                console.log('"son eleman" :>> ', "son eleman");
-                document.getElementsByClassName("gallery-slider-content")[0].scrollBy(90000, 0)
-
-            } else {
-
-                // document.getElementsByClassName("gallery-slider-content")[0].scrollTo(next.id * 90, 0);
-                // document.getElementsByClassName("gallery-slider-content")[0].scrollTo(document.getElementsByClassName("gallery-slider-content")[0].scrollLeft + 80, 0)
-
-
-                // document.getElementsByClassName("gallery-slider-content")[0].style.transform = "rotate(-24deg)"
-                // document.getElementsByClassName("gallery-slider-content")[0].style.transitionDuration = "0.1s";
-
-                document.getElementsByClassName("gallery-slider-content")[0]
-                    .scrollBy((document.querySelector(".slider-image.selected").getBoundingClientRect().left + 50), 0);
-
-
-            }
-
-
-
-            this.handleImageSelect("", next.id)
+            this.handleImageSelect(1, next)
         } else {
-
-
-
-            if (prev === myNextList[0]) {
-
-                console.log('"onceki eleman ilk elemana eşit" :>> ', "onceki eleman ilk elemana eşit");
-                document.getElementsByClassName("gallery-slider-content")[0].scrollTo(0, 0);
-
-            } else if (prev == myNextList[this.images.length - 1]) {
-
-                console.log('"son eleman" :>> ', "son eleman");
-                document.getElementsByClassName("gallery-slider-content")[0].scrollBy(90000, 0)
-
-            } else {
-                console.log('"sola gidiş" :>> ', "sola gidiş");
-                // document.getElementsByClassName("gallery-slider-content")[0].scrollTo(document.getElementsByClassName("gallery-slider-content")[0].scrollLeft - 90, 0);
-                document.getElementsByClassName("gallery-slider-content")[0].scrollBy(document.querySelector(".slider-image.selected").getBoundingClientRect().left - 170, 0);
-            }
-
-
-
-
-
-            // document.getElementsByClassName("gallery-slider-content")[0].scrollLeft -= 150;
-            this.handleImageSelect("", prev.id)
+            this.handleImageSelect(-1, prev)
         }
 
     }
