@@ -352,7 +352,7 @@ div.selectedImg img:hover {
   }
 
   .gallery-prev {
-    margin-left: 2%;
+    margin-left: 3%;
     top: 25%;
     height: 40%;
     /* background-color: black; */
@@ -361,10 +361,12 @@ div.selectedImg img:hover {
   }
 
   .gallery-next {
+    margin-right: 3%;
     top: 25%;
     height: 40%;
-    background-color: black;
+    /* background-color: black; */
     background: rgba(255, 255, 255, 0.15);
+    /* give opacity to bg color only */
 
   }
 
