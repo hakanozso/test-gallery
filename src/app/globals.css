@@ -379,3 +379,26 @@ div.selectedImg img:hover {
     max-width: 100%;
   }
 }
+
+
+
+/* Scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #dddddd;
+  /*box-shadow: inset 0 0 5px #dddddd;*/
+  border-radius: 4px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #9e9e9e;
+  border-radius: 4px;
+}

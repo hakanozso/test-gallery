@@ -52,6 +52,10 @@ class GalleryService {
         // console.log('newls :>> ', myNextList);
         // setImages(myNextList);
         this.images = myNextList
+
+
+        console.log('dikat :>> ', document.querySelector(".slider-image.selected").getBoundingClientRect());
+
     }
 
 
@@ -82,41 +86,57 @@ class GalleryService {
 
         // console.log('selected_image :>> ', selected_image, selected_image2, "-----", "prev: ", prev, "next: ", next);
 
+
+        console.log('next :>> ', next);
+        console.log('next == myNextList[0] :>> ', next == myNextList[0]);
+        console.log('scroll mevcut konum :>> ', document.getElementsByClassName("gallery-slider-content")[0].scrollLeft);
+
+        console.log('dikat :>> ', document.querySelector(".slider-image.selected").getBoundingClientRect());
+
         if (rotate === 1) {
 
-            console.log('next :>> ', next);
-            console.log('next == myNextList[0] :>> ', next == myNextList[0]);
-            console.log('object :>> ', document.getElementsByClassName("gallery-slider-content")[0].scrollLeft);
+            // console.log('dikat :>> ', document.querySelector(".slider-image.selected"));
+
+            // document.querySelector(".slider-image .selected")[0].style.display = "none"
 
             if (next === myNextList[0]) {
-                // document.getElementsByClassName("gallery-slider-content")[0].style.transition = "spin 4s linear infinite"
-                // document.getElementsByClassName("gallery-slider-content")[0].style.transitionDuration = "0.3s";
-                // document.getElementsByClassName("gallery-slider-content")[0].style.transform 
+
+                console.log('"sonraki eleman ilk elemana eşit" :>> ', "sonraki eleman ilk elemana eşit");
                 document.getElementsByClassName("gallery-slider-content")[0].scrollTo(0, 0);
+
+            } else if (next == myNextList[this.images.length - 1]) {
+
+                console.log('"son eleman" :>> ', "son eleman");
+                document.getElementsByClassName("gallery-slider-content")[0].scrollBy(90000, 0)
+
             } else {
-                document.getElementsByClassName("gallery-slider-content")[0].scrollTo(next.id * 90, 0);
+
+                // document.getElementsByClassName("gallery-slider-content")[0].scrollTo(next.id * 90, 0);
+                document.getElementsByClassName("gallery-slider-content")[0].scrollTo(document.getElementsByClassName("gallery-slider-content")[0].scrollLeft + 80, 0)
+
             }
-
-
-
 
 
 
             this.handleImageSelect("", next.id)
         } else {
 
-            console.log('prev :>> ', prev);
-            console.log('prev == myNextList[0] :>> ', prev == myNextList[0]);
-            console.log('scrolleft :>> ', document.getElementsByClassName("gallery-slider-content")[0].scrollLeft);
+
 
             if (prev === myNextList[0]) {
-                // document.getElementsByClassName("gallery-slider-content")[0].style.transition = "spin 4s linear infinite"
-                // document.getElementsByClassName("gallery-slider-content")[0].style.transitionDuration = "0.3s";
-                // document.getElementsByClassName("gallery-slider-content")[0].style.transform 
+
+                console.log('"onceki eleman ilk elemana eşit" :>> ', "onceki eleman ilk elemana eşit");
                 document.getElementsByClassName("gallery-slider-content")[0].scrollTo(0, 0);
+
+            } else if (prev == myNextList[this.images.length - 1]) {
+
+                console.log('"son eleman" :>> ', "son eleman");
+                document.getElementsByClassName("gallery-slider-content")[0].scrollBy(90000, 0)
+
             } else {
-                // document.getElementsByClassName("gallery-slider-content")[0].scrollTo(-((myNextList.length - next.id) * 90), 0);
-                document.getElementsByClassName("gallery-slider-content")[0].scrollTo(-90, 0);
+                console.log('"sola gidiş" :>> ', "sola gidiş");
+                // document.getElementsByClassName("gallery-slider-content")[0].scrollTo(document.getElementsByClassName("gallery-slider-content")[0].scrollLeft - 90, 0);
+                document.getElementsByClassName("gallery-slider-content")[0].scrollTo(document.getElementsByClassName("gallery-slider-content")[0].scrollLeft - 80, 0)
             }
 
 
