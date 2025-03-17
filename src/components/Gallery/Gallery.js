@@ -190,7 +190,7 @@ export default function Gallery({ images }) {
     const prev_next_hide_attr = (a) => {
         console.log('"hide" :>> ', a);
         // document.querySelector(`.${a}`).style.backgroundColor = "black";
-        document.querySelector(`.${a}`).style.background = "rgba(255, 255, 255, 0.15)"
+        document.querySelector(`.${a}`).style.background = "rgb(255, 255, 255)"
         document.querySelector(`.${a} svg`).style.fill = "white";
     }
 
