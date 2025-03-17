@@ -95,6 +95,8 @@ class GalleryService {
 
         if (rotate === 1) {
 
+
+
             // console.log('dikat :>> ', document.querySelector(".slider-image.selected"));
 
             // document.querySelector(".slider-image .selected")[0].style.display = "none"
@@ -112,7 +114,15 @@ class GalleryService {
             } else {
 
                 // document.getElementsByClassName("gallery-slider-content")[0].scrollTo(next.id * 90, 0);
-                document.getElementsByClassName("gallery-slider-content")[0].scrollTo(document.getElementsByClassName("gallery-slider-content")[0].scrollLeft + 80, 0)
+                // document.getElementsByClassName("gallery-slider-content")[0].scrollTo(document.getElementsByClassName("gallery-slider-content")[0].scrollLeft + 80, 0)
+
+
+                // document.getElementsByClassName("gallery-slider-content")[0].style.transform = "rotate(-24deg)"
+                // document.getElementsByClassName("gallery-slider-content")[0].style.transitionDuration = "0.1s";
+
+                document.getElementsByClassName("gallery-slider-content")[0]
+                    .scrollBy((document.querySelector(".slider-image.selected").getBoundingClientRect().left + 50), 0);
+
 
             }
 
@@ -136,7 +146,7 @@ class GalleryService {
             } else {
                 console.log('"sola gidiş" :>> ', "sola gidiş");
                 // document.getElementsByClassName("gallery-slider-content")[0].scrollTo(document.getElementsByClassName("gallery-slider-content")[0].scrollLeft - 90, 0);
-                document.getElementsByClassName("gallery-slider-content")[0].scrollTo(document.getElementsByClassName("gallery-slider-content")[0].scrollLeft - 80, 0)
+                document.getElementsByClassName("gallery-slider-content")[0].scrollBy(document.querySelector(".slider-image.selected").getBoundingClientRect().left - 170, 0);
             }
 
 
@@ -310,22 +320,6 @@ class GalleryService {
         //     console.log("onceki = ", offsetX, "sola gidiş = ", e.nativeEvent.layerX)
         //     e.target.style.marginLeft = e.nativeEvent.offsetX + "px";
         //     e.target.style.marginRight = "0";
-        // }
-
-
-
-        // setOffsetX(e.nativeEvent.offsetX)
-        // setOffsetY(e.nativeEvent.offsetY)
-
-        // if (offsetX > 400) {
-        //     console.log('first', "next image")
-        //     // setOffsetX(0)
-
-        //     // handleImage(1)
-        // } else if (0 > offsetX && offsetX > -400) {
-        //     console.log('first', "prev image")
-        //     // setOffsetX(0)
-        //     // handleImage(-1)
         // }
 
 
