@@ -339,7 +339,7 @@ div.selectedImg img:hover {
 @media screen and (min-width: 100px) and (max-width: 600px) {
 
   .gallery-toolbar {
-    padding-top: 8px;
+    padding-top: 12px;
     padding-right: 8px;
   }
 
