@@ -68,19 +68,12 @@ class GalleryService {
                 .scrollTo(90000, 0);
         } else if (myNextList.findIndex(o => o == my_image) <= myNextList.findIndex(o => o == prev_selected_image)) {
             console.log('"sola gidis" :>> ', "sola gidis");
-            document.getElementsByClassName("gallery-slider-content")[0].scrollBy(document.querySelector(".slider-image.selected").getBoundingClientRect().left - 170, 0);
-
+            document.getElementsByClassName("gallery-slider-content")[0].scrollBy(document.querySelector(".slider-image.selected").getBoundingClientRect().left - 250, 0);
         } else {
-            console.log('"saga gidis" :>> ', "saga gidis");
+            console.log('"saga gidis" :>> ', "saga gidis", ((document.querySelector(".slider-image.selected").getBoundingClientRect().left) - (document.querySelector(".slider-image.selected").getBoundingClientRect().right)) * 2);
             document.getElementsByClassName("gallery-slider-content")[0]
-                .scrollBy((document.querySelector(".slider-image.selected").getBoundingClientRect().left + 50), 0);
+                .scrollBy(((document.querySelector(".slider-image.selected").getBoundingClientRect().right) - (document.querySelector(".slider-image.selected").getBoundingClientRect().left)), 0);
         }
-
-
-        // document.getElementsByClassName("gallery-slider-content")[0]
-        //     .scrollBy((document.querySelector(".slider-image.selected").getBoundingClientRect().left + 50), 0);
-
-
 
     }
 
