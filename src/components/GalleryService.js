@@ -63,16 +63,30 @@ class GalleryService {
             console.log('"ilk eleman" :>> ', "ilk eleman");
             document.getElementsByClassName("gallery-slider-content")[0]
                 .scrollTo(0, 0);
+
         } else if (myNextList.findIndex(o => o == my_image) == myNextList.length - 1) {
+
             document.getElementsByClassName("gallery-slider-content")[0]
                 .scrollTo(90000, 0);
+
         } else if (myNextList.findIndex(o => o == my_image) <= myNextList.findIndex(o => o == prev_selected_image)) {
-            console.log('"sola gidis" :>> ', "sola gidis");
-            document.getElementsByClassName("gallery-slider-content")[0].scrollBy(document.querySelector(".slider-image.selected").getBoundingClientRect().left - 250, 0);
-        } else {
-            console.log('"saga gidis" :>> ', "saga gidis", ((document.querySelector(".slider-image.selected").getBoundingClientRect().left) - (document.querySelector(".slider-image.selected").getBoundingClientRect().right)) * 2);
+
+            // console.log('"sola gidis" :>> ', "sola gidis",
+            //     (myNextList.findIndex(o => o == prev_selected_image) - myNextList.findIndex(o => o == my_image)) * 100
+            // );
+
             document.getElementsByClassName("gallery-slider-content")[0]
-                .scrollBy(((document.querySelector(".slider-image.selected").getBoundingClientRect().right) - (document.querySelector(".slider-image.selected").getBoundingClientRect().left)), 0);
+                .scrollBy((myNextList.findIndex(o => o == prev_selected_image) - myNextList.findIndex(o => o == my_image)) * -100, 0);
+
+        } else {
+
+            // console.log('"saga gidis" :>> ', "saga gidis",
+            //     (myNextList.findIndex(o => o == prev_selected_image) - myNextList.findIndex(o => o == my_image)) * 100
+            // );
+
+            document.getElementsByClassName("gallery-slider-content")[0]
+                .scrollBy((myNextList.findIndex(o => o == prev_selected_image) - myNextList.findIndex(o => o == my_image)) * -100, 0);
+
         }
 
     }
