@@ -76,7 +76,7 @@ class GalleryService {
             // );
 
             document.getElementsByClassName("gallery-slider-content")[0]
-                .scrollBy((myNextList.findIndex(o => o == prev_selected_image) - myNextList.findIndex(o => o == my_image)) * -100, 0);
+                .scrollBy((myNextList.findIndex(o => o == prev_selected_image) - myNextList.findIndex(o => o == my_image)) * -105, 0);
 
         } else {
 
@@ -85,7 +85,7 @@ class GalleryService {
             // );
 
             document.getElementsByClassName("gallery-slider-content")[0]
-                .scrollBy((myNextList.findIndex(o => o == prev_selected_image) - myNextList.findIndex(o => o == my_image)) * -100, 0);
+                .scrollBy((myNextList.findIndex(o => o == prev_selected_image) - myNextList.findIndex(o => o == my_image)) * -105, 0);
 
         }
 
