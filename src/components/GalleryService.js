@@ -122,17 +122,6 @@ class GalleryService {
                 console.log('myNextList.findIndex(o => o == prev_selected_image) * 110 :>> ', myNextList.findIndex(o => o == my_image), myNextList.findIndex(o => o == prev_selected_image) * 80);
 
 
-
-
-
-                // document.getElementsByClassName("gallery-slider-content")[0]
-                //     .scrollTo(document.getElementsByClassName("gallery-slider-content")[0].scrollWidth - ((myNextList.findIndex(o => o == prev_selected_image) - myNextList.findIndex(o => o == my_image)) * 110), 0);
-
-                // document.getElementsByClassName("gallery-slider-content")[0]
-                //     .scrollTo((document.getElementsByClassName("gallery-slider-content")[0].scrollWidth - ((myNextList.findIndex(o => o == prev_selected_image) - myNextList.findIndex(o => o == my_image)) * 110)), 0);
-
-
-
                 // document.getElementsByClassName("gallery-slider-content")[0].addEventListener("scroll", (event) => { console.log(event, '"scrpşşvar" :>> ', "scrpşşvar"); });
 
                 var calcaa = Math.floor((window.innerWidth * myNextList.length) / document.getElementsByClassName("gallery-slider-content")[0].scrollWidth);
@@ -151,25 +140,15 @@ class GalleryService {
                 document.getElementsByClassName("gallery-slider-content")[0]
                     .scrollBy(-80, 0);
 
+
             }
 
-
-            // document.getElementsByClassName("gallery-slider-content")[0]
-            //     .scrollTo((myNextList.findIndex(o => o == prev_selected_image)) * -10, 0);
-
-
-
-
-            // document.getElementsByClassName("gallery-slider-content")[0]
-            //     .scrollTo(rect.x * 2, 0);
 
         } else {
 
             // console.log('"saga gidis" :>> ', "saga gidis",
             //     (myNextList.findIndex(o => o == prev_selected_image) - myNextList.findIndex(o => o == my_image)) * 100
             // );
-
-
 
             if ((myNextList.findIndex(o => o == my_image) - myNextList.findIndex(o => o == prev_selected_image)) > 1) {
 
@@ -185,13 +164,6 @@ class GalleryService {
                     .scrollBy(80, 0);
 
             }
-
-
-            // document.getElementsByClassName("gallery-slider-content")[0]
-            //     .scrollBy((myNextList.findIndex(o => o == prev_selected_image) - myNextList.findIndex(o => o == my_image)) * -105, 0);
-
-            // document.getElementsByClassName("gallery-slider-content")[0]
-            //     .scrollTo(rect.x * 2, 0);
 
         }
 
