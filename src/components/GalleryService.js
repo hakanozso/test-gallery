@@ -142,7 +142,7 @@ class GalleryService {
                 console.log('(myNextList.findIndex(o => o == prev_selected_image) - (calcaa / 2)) * 80 :>> ', (myNextList.findIndex(o => o == prev_selected_image) - (calcaa / 2)) * 80);
 
                 document.getElementsByClassName("gallery-slider-content")[0]
-                    .scrollTo((myNextList.findIndex(o => o == my_image) - (calcaa / 2)) * 120, 0);
+                    .scrollTo((myNextList.findIndex(o => o == my_image) - (calcaa / 2)) * 110, 0);
 
 
 
