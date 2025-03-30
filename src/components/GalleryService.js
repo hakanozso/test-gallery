@@ -121,9 +121,6 @@ class GalleryService {
 
                 console.log('myNextList.findIndex(o => o == prev_selected_image) * 110 :>> ', myNextList.findIndex(o => o == my_image), myNextList.findIndex(o => o == prev_selected_image) * 80);
 
-
-                // document.getElementsByClassName("gallery-slider-content")[0].addEventListener("scroll", (event) => { console.log(event, '"scrpşşvar" :>> ', "scrpşşvar"); });
-
                 var calcaa = Math.floor((window.innerWidth * myNextList.length) / document.getElementsByClassName("gallery-slider-content")[0].scrollWidth);
 
                 console.log('calcaa :>> ', calcaa);
