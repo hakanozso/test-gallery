@@ -20,6 +20,13 @@ class GalleryService {
 
     }
 
+    getPos(el) {
+        // yay readability
+        for (var lx = 0, ly = 0;
+            el != null;
+            lx += el.offsetLeft, ly += el.offsetTop, el = el.offsetParent);
+        return { x: lx, y: ly };
+    }
     handleImageSelect = (rotate, image) => {
 
 
@@ -46,21 +53,27 @@ class GalleryService {
         const my_image = myNextList.find(
             a => a.id === image.id
         );
-        console.log('my_image :>> ', my_image);
+        // console.log('my_image :>> ', my_image);
         my_image.selected = 1;
 
-        console.log('myNextList :>> ', myNextList);
+        // console.log('myNextList :>> ', myNextList);
 
         this.images = myNextList
 
-        console.log('dikat :>> ', document.querySelector(".slider-image.selected").getBoundingClientRect());
+        // console.log('dikat :>> ', document.querySelector(".slider-image.selected").getBoundingClientRect());
 
         myNextList.findIndex(o => o == my_image) // => 1
-        console.log('myNextList.findIndex(o => o == my_image) :>> ', myNextList.findIndex(o => o == my_image));
+        // console.log('myNextList.findIndex(o => o == my_image) :>> ', myNextList.findIndex(o => o == my_image));
+
+
+
+        console.log('scrolleft :>> ', document.getElementsByClassName("gallery-slider-content")[0].scrollLeft);
+        console.log('scrollWidth :>> ', document.getElementsByClassName("gallery-slider-content")[0].scrollWidth);
+        console.log('pagw genişlik :>> ', window.innerWidth);
 
         if (myNextList.findIndex(o => o == my_image) == 0) {
 
-            console.log('"ilk eleman" :>> ', "ilk eleman");
+            // console.log('"ilk eleman" :>> ', "ilk eleman");
             document.getElementsByClassName("gallery-slider-content")[0]
                 .scrollTo(0, 0);
 
@@ -75,8 +88,80 @@ class GalleryService {
             //     (myNextList.findIndex(o => o == prev_selected_image) - myNextList.findIndex(o => o == my_image)) * 100
             // );
 
-            document.getElementsByClassName("gallery-slider-content")[0]
-                .scrollBy((myNextList.findIndex(o => o == prev_selected_image) - myNextList.findIndex(o => o == my_image)) * -105, 0);
+            console.log('prev_selected_imageprev_selected_image :>> ', prev_selected_image.url);
+
+
+
+            console.log('d :>> ', document.getElementsByClassName("gallery-slider-content")[0].scrollWidth);
+
+            console.log('myNextList.findIndex(o => o == my_image) :>> ', myNextList.findIndex(o => o == my_image));
+
+            // document.getElementsByClassName("gallery-slider-content")[0]
+            //     .scrollBy((myNextList.findIndex(o => o == prev_selected_image) - myNextList.findIndex(o => o == my_image)) * -105, 0);
+
+
+            console.log('document. :>> ', my_image.url,
+                myNextList.findIndex(o => o == my_image), document.querySelector("img[src='" + my_image.url + "']").offsetLeft);
+
+            console.log('objesdfsdfsdfct :>> ', this.getPos(document.querySelector("img[src='" + my_image.url + "']")));
+
+
+            // document.getElementsByClassName("gallery-slider-content")[0]
+            //     .scrollBy(-80, 0);
+
+            // console.log('onceki index ile yeni inde x arasındaki fark :>> ', (myNextList.findIndex(o => o == prev_selected_image)) - (myNextList.findIndex(o => o == my_image)));
+
+            if ((myNextList.findIndex(o => o == prev_selected_image) - myNextList.findIndex(o => o == my_image)) > 1) {
+
+
+                console.log('solacek :>> ', document.getElementsByClassName("gallery-slider-content")[0].scrollWidth - ((myNextList.findIndex(o => o == prev_selected_image) - myNextList.findIndex(o => o == my_image)) * 110));
+
+                // document.getElementsByClassName("gallery-slider-content")[0]
+                //     .scrollBy(-((myNextList.findIndex(o => o == prev_selected_image) - myNextList.findIndex(o => o == my_image)) * 80), 0);
+
+                console.log('myNextList.findIndex(o => o == prev_selected_image) * 110 :>> ', myNextList.findIndex(o => o == my_image), myNextList.findIndex(o => o == prev_selected_image) * 80);
+
+
+
+
+
+                // document.getElementsByClassName("gallery-slider-content")[0]
+                //     .scrollTo(document.getElementsByClassName("gallery-slider-content")[0].scrollWidth - ((myNextList.findIndex(o => o == prev_selected_image) - myNextList.findIndex(o => o == my_image)) * 110), 0);
+
+                // document.getElementsByClassName("gallery-slider-content")[0]
+                //     .scrollTo((document.getElementsByClassName("gallery-slider-content")[0].scrollWidth - ((myNextList.findIndex(o => o == prev_selected_image) - myNextList.findIndex(o => o == my_image)) * 110)), 0);
+
+
+
+                // document.getElementsByClassName("gallery-slider-content")[0].addEventListener("scroll", (event) => { console.log(event, '"scrpşşvar" :>> ', "scrpşşvar"); });
+
+                var calcaa = Math.floor((window.innerWidth * myNextList.length) / document.getElementsByClassName("gallery-slider-content")[0].scrollWidth);
+
+                console.log('calcaa :>> ', calcaa);
+
+                console.log('(myNextList.findIndex(o => o == prev_selected_image) - (calcaa / 2)) * 80 :>> ', (myNextList.findIndex(o => o == prev_selected_image) - (calcaa / 2)) * 80);
+
+                document.getElementsByClassName("gallery-slider-content")[0]
+                    .scrollTo((myNextList.findIndex(o => o == my_image) - (calcaa / 2)) * 120, 0);
+
+
+
+            } else {
+
+                document.getElementsByClassName("gallery-slider-content")[0]
+                    .scrollBy(-80, 0);
+
+            }
+
+
+            // document.getElementsByClassName("gallery-slider-content")[0]
+            //     .scrollTo((myNextList.findIndex(o => o == prev_selected_image)) * -10, 0);
+
+
+
+
+            // document.getElementsByClassName("gallery-slider-content")[0]
+            //     .scrollTo(rect.x * 2, 0);
 
         } else {
 
@@ -84,8 +169,29 @@ class GalleryService {
             //     (myNextList.findIndex(o => o == prev_selected_image) - myNextList.findIndex(o => o == my_image)) * 100
             // );
 
-            document.getElementsByClassName("gallery-slider-content")[0]
-                .scrollBy((myNextList.findIndex(o => o == prev_selected_image) - myNextList.findIndex(o => o == my_image)) * -105, 0);
+
+
+            if ((myNextList.findIndex(o => o == my_image) - myNextList.findIndex(o => o == prev_selected_image)) > 1) {
+
+
+                console.log('sagacek :>> ', ((myNextList.findIndex(o => o == my_image) - myNextList.findIndex(o => o == prev_selected_image)) * 80) + 80);
+
+                document.getElementsByClassName("gallery-slider-content")[0]
+                    .scrollBy(((myNextList.findIndex(o => o == my_image) - myNextList.findIndex(o => o == prev_selected_image)) * 80), 0);
+
+            } else {
+
+                document.getElementsByClassName("gallery-slider-content")[0]
+                    .scrollBy(80, 0);
+
+            }
+
+
+            // document.getElementsByClassName("gallery-slider-content")[0]
+            //     .scrollBy((myNextList.findIndex(o => o == prev_selected_image) - myNextList.findIndex(o => o == my_image)) * -105, 0);
+
+            // document.getElementsByClassName("gallery-slider-content")[0]
+            //     .scrollTo(rect.x * 2, 0);
 
         }
 
