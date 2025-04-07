@@ -105,7 +105,7 @@ class GalleryService {
 
 
             document.getElementsByClassName("gallery-slider-content")[0]
-                .scrollTo((myNextList.findIndex(o => o == my_image) - (maxItemCount / 2)) * 110, 0);
+                .scrollTo((myNextList.findIndex(o => o == my_image) - (maxItemCount / 2)) * 130, 0);
 
         } else {
 
@@ -114,7 +114,7 @@ class GalleryService {
             // );
 
             document.getElementsByClassName("gallery-slider-content")[0]
-                .scrollTo((myNextList.findIndex(o => o == my_image) - (maxItemCount / 2)) * 110, 0);
+                .scrollTo((myNextList.findIndex(o => o == my_image) - (maxItemCount / 2)) * 130, 0);
 
 
 
