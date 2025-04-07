@@ -67,9 +67,9 @@ class GalleryService {
 
 
 
-        console.log('scrolleft :>> ', document.getElementsByClassName("gallery-slider-content")[0].scrollLeft);
-        console.log('scrollWidth :>> ', document.getElementsByClassName("gallery-slider-content")[0].scrollWidth);
-        console.log('pagw genişlik :>> ', window.innerWidth);
+        // console.log('scrolleft :>> ', document.getElementsByClassName("gallery-slider-content")[0].scrollLeft);
+        // console.log('scrollWidth :>> ', document.getElementsByClassName("gallery-slider-content")[0].scrollWidth);
+        // console.log('pagw genişlik :>> ', window.innerWidth);
 
 
         var maxItemCount2 = Math.floor((window.innerWidth * myNextList.length) / document.getElementsByClassName("gallery-slider-content")[0].scrollWidth) - 0.5;
