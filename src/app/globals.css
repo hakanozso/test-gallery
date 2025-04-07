@@ -50,9 +50,10 @@
 
 
 .gallery-content {
-  height: 70%;
+  height: 75%;
+  /* margin-bottom: 20px;
+  margin-top: 2%; */
   margin-bottom: 20px;
-  margin-top: 2%;
 }
 
 .gallery-content .selectedImg {
@@ -65,6 +66,9 @@
   margin: auto;
 
   max-width: 80%;
+
+  /* padding-top: 2%;
+  padding-bottom: 20px; */
 
 }
 
