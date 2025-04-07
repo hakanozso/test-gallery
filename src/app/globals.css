@@ -17,24 +17,11 @@
 /* Gallery Toolbar */
 
 .gallery-toolbar {
-  /* height: 5%; */
-
   display: flex;
   justify-content: end;
   padding-top: 12px;
   padding-right: 8px;
-
   height: 7%;
-
-  /* width: 100%;
-  position: absolute;
-  display: flex;
-  justify-content: end;
-  top: 2%;
-  right: 1%;
-  gap: 1%;
-  height: 10%; */
-  /* user-select: none; */
 }
 
 
@@ -86,9 +73,6 @@
   align-self: center;
   /* max-width: 500px; */
   max-width: 40rem;
-
-  /* max-width: 100%; */
-
   max-height: 100%;
   object-fit: contain;
   /* transition: transform 800ms; */
