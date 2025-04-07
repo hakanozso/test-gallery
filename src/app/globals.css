@@ -183,11 +183,8 @@
   right: 0%;
   /* border: 1px solid whitesmoke;
   border-radius: 0.5rem; */
-
-
   /* overflow-y: scroll;
   overflow-x: scroll; */
-
   /* margin-bottom: 2%; */
   margin-left: 10px;
   margin-right: 10px;
@@ -234,16 +231,9 @@
   /* position: relative; */
   object-fit: contain;
   width: 110px;
-
-  height: auto;
-  /* min-height: 100% !important; */
-  min-height: 110px;
-  max-height: 110px;
+  height: 110px;
   vertical-align: top;
 
-
-  /* min-height: 100% !important;
-  height: 100% !important; */
   /* padding: 2px; */
   border: 2px solid transparent;
   /* margin: 2%;
