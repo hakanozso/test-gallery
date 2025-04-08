@@ -69,15 +69,17 @@
 
   max-width: 80%;
 
+
+
 }
 
 .gallery-content .selectedImg img {
 
   align-self: center;
   max-width: 40rem;
-  max-height: 450px;
+  max-height: 500px;
   /* max-height: auto; */
-  /* object-fit: contain; */
+  object-fit: contain;
   /* transition: transform 800ms; */
   user-select: none;
   border-radius: 0.5rem;
