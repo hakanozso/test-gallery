@@ -90,34 +90,9 @@ class GalleryService {
             document.getElementsByClassName("gallery-slider-content")[0]
                 .scrollTo(document.getElementsByClassName("gallery-slider-content")[0].scrollWidth, 0);
 
-        } else if (myNextList.findIndex(o => o == my_image) <= myNextList.findIndex(o => o == prev_selected_image)) {
-
-            // console.log('"sola gidis" :>> ', "sola gidis",
-            //     (myNextList.findIndex(o => o == prev_selected_image) - myNextList.findIndex(o => o == my_image)) * 100
-            // );
-
-            console.log('prev_selected_imageprev_selected_image :>> ', prev_selected_image.url);
-            console.log('d :>> ', document.getElementsByClassName("gallery-slider-content")[0].scrollWidth);
-            console.log('myNextList.findIndex(o => o == my_image) :>> ', myNextList.findIndex(o => o == my_image));
-
-            // document.getElementsByClassName("gallery-slider-content")[0]
-            //     .scrollBy((myNextList.findIndex(o => o == prev_selected_image) - myNextList.findIndex(o => o == my_image)) * -105, 0);
-
-
-            document.getElementsByClassName("gallery-slider-content")[0]
-                .scrollTo((myNextList.findIndex(o => o == my_image) - (maxItemCount / 2)) * 130, 0);
-
         } else {
-
-            // console.log('"saga gidis" :>> ', "saga gidis",
-            //     (myNextList.findIndex(o => o == prev_selected_image) - myNextList.findIndex(o => o == my_image)) * 100
-            // );
-
             document.getElementsByClassName("gallery-slider-content")[0]
-                .scrollTo((myNextList.findIndex(o => o == my_image) - (maxItemCount / 2)) * 130, 0);
-
-
-
+                .scrollTo(((myNextList.findIndex(o => o == my_image) - (maxItemCount / 2)) * 130) + 10, 0);
         }
 
     }
