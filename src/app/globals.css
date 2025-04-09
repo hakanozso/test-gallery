@@ -100,7 +100,8 @@
 
 
 .gallery-prev {
-  background-color: black;
+  background: rgba(255, 255, 255, 0.03);
+  /* background-color: black; */
   position: absolute;
   top: 90px;
   /* top: 350px; */
@@ -131,7 +132,8 @@
 
 
 .gallery-next {
-  background-color: black;
+  background: rgba(255, 255, 255, 0.03);
+  /* background-color: black; */
   position: absolute;
   top: 90px;
   /* top: 350px; */
